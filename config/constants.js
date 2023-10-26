@@ -1,2 +1,2 @@
-export const LOCALSTORAGE_AUTH_KEY = 'key' //DEFINE LOCAL STORAGE KEY HERE
-export const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL
+export const LOCALSTORAGE_AUTH_KEY = 'key'; //DEFINE LOCAL STORAGE KEY HERE
+export const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL;

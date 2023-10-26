@@ -13,7 +13,7 @@ const API = () => {
   instance.interceptors.request.use(
     (apiConfig) => {
       const auth = JSON.parse(
-        localStorage.getItem(LOCALSTORAGE_AUTH_KEY)
+        localStorage.getItem(LOCALSTORAGE_AUTH_KEY),
       )?.token;
       const accessToken = auth?.accessToken;
 
@@ -23,7 +23,7 @@ const API = () => {
 
       return apiConfig;
     },
-    (error) => Promise.reject(error)
+    (error) => Promise.reject(error),
   );
 
   instance.interceptors.response.use(
@@ -33,9 +33,9 @@ const API = () => {
         localStorage.removeItem(LOCALSTORAGE_AUTH_KEY);
         window.location.assign('/');
       }
-      
+
       return Promise.reject(error);
-    }
+    },
   );
 
   return instance;
